@@ -5,7 +5,7 @@ defmodule Torex.Mixfile do
     [
       app: :torex,
       version: "0.1.0",
-      elixir: "~> 1.5.1",
+      elixir: "~> 1.13",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
       deps: deps(),
@@ -35,7 +35,7 @@ defmodule Torex.Mixfile do
   end
 
   defp apps(:dev) do
-    apps(:prod) ++ [:remix]
+    apps(:prod)
   end
 
   defp apps(:test) do
@@ -53,9 +53,8 @@ defmodule Torex.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:poison, "~> 3.1.0"},
-      {:httpoison, "~> 0.13.0"},
-      {:remix, "~> 0.0.2"},
+      {:poison, "~> 5.0"},
+      {:httpoison, "~> 1.8"},
       {:ex_doc, ">= 0.0.0", only: :dev}
     ]
   end
